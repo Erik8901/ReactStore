@@ -1,0 +1,7 @@
+.header-main-container {
+    position: fixed;
+    height: 4rem;
+    width: 100vw;
+    top: 0;
+    border-bottom: 1px solid #BFBDBD;
+}

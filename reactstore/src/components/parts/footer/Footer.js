@@ -3,7 +3,7 @@ import './Footer.css';
 function Footer() {
     return (
         <div className="footer-main-container">
-            <h1>React Store footer</h1>
+            <h1>React Store Footer</h1>
         </div>
     );
 }

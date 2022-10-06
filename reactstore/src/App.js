@@ -5,8 +5,8 @@ import Footer from './components/parts/footer/Footer'
 function App() {
   return (
     <div className="App">
-      <h1>React Store</h1>
       <Header />
+      {/* <h1>React Store</h1> */}
       <Footer />
     </div>
   );
