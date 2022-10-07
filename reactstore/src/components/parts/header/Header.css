@@ -1,7 +1,22 @@
 .header-main-container {
+    background: #fff;
     position: fixed;
+    display: flex;
     height: 4rem;
     width: 100vw;
     top: 0;
-    border-bottom: 1px solid #BFBDBD;
+    border-bottom: 4px solid #696969;
+    z-index: 100;
+}
+
+.hamburger-icon {
+    display: flex;
+    position: fixed;
+    left: 3rem;
+    align-self: center;
+    cursor: pointer;
+}
+
+h1 {
+    margin: 0 auto;
 }

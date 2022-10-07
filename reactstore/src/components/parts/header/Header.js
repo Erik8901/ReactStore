@@ -1,24 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import axios from "axios";
+import React from 'react';
+import { openMainMenuState } from "../../../recoil_state";
+import { useRecoilState } from "recoil";
+
+// get our fontawesome imports
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-//Styles
+//styles
 import './Header.css';
 
 function Header() {
+    const [openMainMenu, setOpenMainMenu] = useRecoilState(openMainMenuState);
 
-    useEffect(() => {
-
-
-        const urlAllCategories = 'https://fakestoreapi.com/products/category/'
-        const mensClothingEndPoint = 'men%27s%20clothing'
-
-        axios.get(urlAllCategories + mensClothingEndPoint)
-            .then(response => console.log(response))
-    }, [])
+    const openMenu = () => {
+        setOpenMainMenu(!openMainMenu)
+    }
     return (
         <div className="header-main-container">
             <h1>React Store Header</h1>
+            <FontAwesomeIcon icon={faBars} size="lg" className="hamburger-icon" onMouseEnter={openMenu} onClick={openMenu} />
         </div>
     );
 }
