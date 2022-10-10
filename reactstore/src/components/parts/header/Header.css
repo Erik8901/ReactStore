@@ -17,6 +17,31 @@
     cursor: pointer;
 }
 
-h1 {
+.header-h1 {
     margin: 0 auto;
+    margin-left: 40%;
+    align-self: center;
+}
+
+.login-and-cart-container {
+    padding: 0 3rem 0 0;
+    width: 20%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.search-bar {
+    padding: .3rem;
+    border: 2px solid #000;
+}
+
+.search-bar:focus {
+    outline: none;
+}
+
+.user-cart-icon,
+.user-login-icon {
+    cursor: pointer;
 }

@@ -10,12 +10,20 @@ import {
   useRecoilState,
   useRecoilValue,
 } from 'recoil';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RecoilRoot>
-    <App />
-  </RecoilRoot>
+  <Router>
+    <RecoilRoot>
+      <App />
+    </RecoilRoot>
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function

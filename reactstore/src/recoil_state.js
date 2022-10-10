@@ -10,8 +10,20 @@ const categoriesDefaultState = atom({
     default: []
 })
 
+const selectedCategoryState = atom({
+    key: "categorySelected",
+    default: null
+})
+
+const selectedCategoryList = atom({
+    key: "categorySelectedList",
+    default: []
+})
+
 
 export {
     openMainMenuState,
-    categoriesDefaultState
+    categoriesDefaultState,
+    selectedCategoryState,
+    selectedCategoryList
 };

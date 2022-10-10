@@ -18,6 +18,11 @@
     padding: 0 0 0 3rem;
 }
 
+a {
+    color: #000;
+    text-decoration: none;
+}
+
 .category-li {
     list-style: none;
     padding: 0.6rem;

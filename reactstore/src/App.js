@@ -8,6 +8,9 @@ import { openMainMenuState } from "./recoil_state";
 import { useRecoilState } from 'recoil';
 import ApiCalls from './services/ApiCalls';
 
+import Routing from './services/Routing';
+
+
 function App() {
   const [openMainMenu] = useRecoilState(openMainMenuState);
 
@@ -17,9 +20,9 @@ function App() {
       <ApiCalls />
       {openMainMenu ? <MainMenu /> : null}
       {/* <MainMenu /> */}
-      <LandingPage />
+      <Routing />
       <Footer />
-    </div>
+    </div >
   );
 }
 
