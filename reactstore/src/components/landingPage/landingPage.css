@@ -5,3 +5,11 @@
     z-index: 10;
     overflow: hidden;
 }
+
+.commercial-text {
+    position: absolute;
+    color: #ffff;
+    top: 19rem;
+    font-size: 2rem;
+    left: 6rem;
+}

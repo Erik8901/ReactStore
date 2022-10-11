@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect } from 'react';
 import axios from "axios";
 import { useRecoilState } from 'recoil';
 import { categoriesDefaultState, selectedCategoryState, selectedCategoryList } from "../recoil_state";
@@ -28,7 +28,7 @@ function ApiCalls() {
 
             axios.get(baseUrl + currentCategory + lowerCaseCat)
                 // .then(response => console.log(response.data))
-                .then(response => setCategoryList([response.data]))
+                .then(response => setCategoryList(response.data))
 
         } else {
             return

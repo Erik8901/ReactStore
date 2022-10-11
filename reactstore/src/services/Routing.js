@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import LandingPage from '../components/landingPage/LandingPage';
 import Products from '../pages/Products';
 import { useRecoilState } from 'recoil';
 import { selectedCategoryState } from "../recoil_state";
-
 import {
-    BrowserRouter as Router,
     Routes,
     Route,
-    Link,
-    useParams
+    BrowserRouter
 } from "react-router-dom";
 
-
+import './routes.css'
 
 function Routing() {
-    const [selectedCategory, setSelectedCategory] = useRecoilState(selectedCategoryState)
+    const [selectedCategory] = useRecoilState(selectedCategoryState)
 
     useEffect(() => {
 
@@ -26,9 +23,8 @@ function Routing() {
                 <Route path='/' element={<LandingPage />} />
                 <Route path={selectedCategory} element={<Products />} />
             </Routes>
-
         </div>
     );
 }
 
-export default Routing
+export default Routing;

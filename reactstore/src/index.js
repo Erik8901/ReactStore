@@ -5,21 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
 } from 'recoil';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  browserHistory
 } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
+
+  <Router >
     <RecoilRoot>
       <App />
     </RecoilRoot>

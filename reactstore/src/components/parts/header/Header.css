@@ -21,6 +21,8 @@
     margin: 0 auto;
     margin-left: 40%;
     align-self: center;
+    font-weight: 700;
+    font-size: x-large;
 }
 
 .login-and-cart-container {

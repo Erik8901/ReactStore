@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { openMainMenuState, categoriesDefaultState, selectedCategoryState } from "../../../recoil_state";
 import { useRecoilState } from 'recoil';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
 } from "react-router-dom";
 
