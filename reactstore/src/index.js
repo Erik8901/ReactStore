@@ -8,13 +8,11 @@ import {
 } from 'recoil';
 import {
   BrowserRouter as Router,
-  browserHistory
 } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-  <Router >
+  <Router>
     <RecoilRoot>
       <App />
     </RecoilRoot>

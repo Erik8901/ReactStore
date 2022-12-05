@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { openMainMenuState, categoriesDefaultState, selectedCategoryState } from "../../../recoil_state";
+import { openMainMenuState, categoriesDefaultState, selectedCategoryState, savedSelectedCategoryState } from "../../../recoil_state";
 import { useRecoilState } from 'recoil';
 import {
     Link
@@ -14,7 +14,7 @@ function MainMenu() {
     const [categories] = useRecoilState(categoriesDefaultState)
     const [cats, setCats] = useState([])
     const [selectedCategory, setSelectedCategory] = useRecoilState(selectedCategoryState)
-
+    const [savedCategory, setSavedCategory] = useRecoilState(savedSelectedCategoryState)
 
     useEffect(() => {
         if (categories) { setCats(categories.map(cat => cat.charAt(0).toUpperCase() + cat.slice(1))) }
@@ -26,14 +26,15 @@ function MainMenu() {
 
     const selectCategory = (cat) => {
         setSelectedCategory(cat)
+        setSavedCategory(cat)
     }
-
+    //replace(/\s+/g, '-')
     return (
         <div className="main-menu-container" onMouseLeave={closeMainMenu}>
-            <h3>Categories</h3>
+            <h3 className="title-categories">Categories</h3>
             <div className='categories-list-container'>
                 {cats.map((category, index) => {
-                    return <Link to={category} key={index}>
+                    return <Link to={'/category/' + category.replace(' ', '-')} key={index}>
                         <li className="category-li" key={index} categoryid={index} onClick={() => selectCategory(category)}>
                             {category}
                         </li>

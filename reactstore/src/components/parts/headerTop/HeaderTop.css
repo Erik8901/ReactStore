@@ -1,0 +1,18 @@
+.header-top-main-container {
+    text-align: center;
+    margin: 0px;
+    padding: 12px 0px;
+    left: 0px;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background-color: rgba(30, 30, 32, 0.93);
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    line-height: 17.5px;
+    font-family: Helvetica;
+    top: 0;
+    position: fixed;
+
+}

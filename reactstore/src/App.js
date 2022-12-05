@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import HeaderTop from './components/parts/headerTop/headerTop'
 import Header from './components/parts/header/Header'
 import Footer from './components/parts/footer/Footer'
 import MainMenu from './components/parts/mainMenu/MainMenu'
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <HeaderTop />
       <Header />
       <ApiCalls />
       {openMainMenu ? <MainMenu /> : null}

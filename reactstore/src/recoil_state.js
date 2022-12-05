@@ -15,6 +15,11 @@ const selectedCategoryState = atom({
     default: null
 })
 
+const savedSelectedCategoryState = atom({
+    key: "savedCategorySelected",
+    default: null
+})
+
 const selectedCategoryList = atom({
     key: "categorySelectedList",
     default: []
@@ -25,5 +30,6 @@ export {
     openMainMenuState,
     categoriesDefaultState,
     selectedCategoryState,
+    savedSelectedCategoryState,
     selectedCategoryList
 };
