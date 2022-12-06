@@ -2,18 +2,3 @@
   text-align: center;
   overflow: hidden;
 }
-
-.header {
-  background: #fff;
-  position: fixed;
-  display: flex;
-  height: 4rem;
-  width: 100vw;
-  top: 0;
-  border-bottom: 2px solid #BFBDBD;
-  z-index: 100;
-}
-
-button {
-  margin-top: 20rem;
-}

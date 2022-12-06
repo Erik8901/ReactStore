@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { selectedCategoryList, selectedCategoryState } from "../recoil_state";
-
+import { selectedCategoryList, selectedCategoryState, savedSelectedCategoryState } from "../recoil_state";
+import { useLocation } from "react-router-dom";
 import './products.css';
 function Products() {
-    const [selectedCategory] = useRecoilState(selectedCategoryState)
     const [productList] = useRecoilState(selectedCategoryList);
+    const [currentCategory, setCurrentCategory] = useState('');
+    const location = useLocation(); // React Hook
+
+    useEffect(() => {
+        const title = location.pathname.split("/")
+        const currentTitle = title[2]
+        setCurrentCategory(currentTitle)
+    }, [location])
 
     return (
         <div className="products-main-container">
             {/* {loadingProduts ? <h3>Loading Products...</h3> : null} */}
             {productList.length === 0 ? null :
                 <div className="products-container">
-                    <h1>{selectedCategory}</h1>
+                    <h1>{currentCategory}</h1>
                     <div className="products-ul">
                         {productList.map((item, index) => {
                             return <div className="product-container" key={item.id}>
