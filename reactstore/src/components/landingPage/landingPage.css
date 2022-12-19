@@ -1,15 +1,16 @@
 .landing-page-main-container {
     width: auto;
     position: relative;
-
     z-index: 10;
     overflow: hidden;
+
 }
 
 .commercial-text {
     position: absolute;
-    color: #ffff;
-    top: 19rem;
+    color: #000;
+    top: 16rem;
     font-size: 2rem;
     left: 6rem;
+    z-index: 1;
 }

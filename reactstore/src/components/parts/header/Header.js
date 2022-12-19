@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 // get our fontawesome imports
-import { faBars, faUser, faBagShopping } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faUser, faBagShopping, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -22,7 +22,8 @@ function Header() {
     return (
         <div className="header-main-container">
             <Link className='header-h1' to="/">React Store Header</Link>
-            <FontAwesomeIcon icon={faBars} size="lg" className="hamburger-icon" onMouseEnter={openMenu} onClick={openMenu} />
+            {openMainMenu === false ? <FontAwesomeIcon icon={faBars} size="lg" className="hamburger-icon" onClick={openMenu} />
+                : <FontAwesomeIcon icon={faClose} size="xl" className="hamburger-icon" onClick={openMenu} />}
             <div className="login-and-cart-container">
                 <input placeholder='Enter keyword or Item' className="search-bar" />
                 <FontAwesomeIcon icon={faUser} size="lg" className="user-login-icon" />

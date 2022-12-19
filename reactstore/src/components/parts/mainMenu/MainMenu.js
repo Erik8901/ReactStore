@@ -30,7 +30,7 @@ function MainMenu() {
     }
     //replace(/\s+/g, '-')
     return (
-        <div className="main-menu-container" onMouseLeave={closeMainMenu}>
+        <div className="main-menu-container">
             <h3 className="title-categories">Categories</h3>
             <div className='categories-list-container'>
                 {cats.map((category, index) => {
