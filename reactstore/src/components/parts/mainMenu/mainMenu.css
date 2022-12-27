@@ -38,3 +38,14 @@ a {
     /* border-bottom: 1px solid #696969; */
     color: #696969;
 }
+
+@media only screen and (max-width: 1000px) {
+    .main-menu-container {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .hamburger-icon {
+        left: 1.51rem;
+    }
+}

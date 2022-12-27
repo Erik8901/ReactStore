@@ -1,7 +1,7 @@
 .header-main-container {
-    background: #fff;
     position: fixed;
-    margin-top: 2%;
+    background: #fff;
+    margin-top: 3rem;
     display: flex;
     height: 4rem;
     width: 100vw;
@@ -46,4 +46,24 @@
 .user-cart-icon,
 .user-login-icon {
     cursor: pointer;
+}
+
+@media only screen and (max-width: 1500px) {
+    .login-and-cart-container {
+        width: 20rem;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .header-main-container {
+        justify-content: end;
+    }
+
+    .header-h1 {
+        display: none;
+    }
+
+    .login-and-cart-container {
+        padding: 0 1rem 0 0;
+    }
 }

@@ -1,10 +1,6 @@
 .header-top-main-container {
-    text-align: center;
-    margin: 0px;
-    padding: 12px 0px;
-    left: 0px;
-    height: auto;
-    width: 100%;
+    height: 3rem;
+    width: 100vw;
     box-sizing: border-box;
     border: none;
     background-color: rgba(30, 30, 32, 0.93);
@@ -14,5 +10,19 @@
     font-family: Helvetica;
     top: 0;
     position: fixed;
+    display: flex;
+    border-bottom: 1px solid #696969;
     z-index: 100;
+}
+
+.text-newsletter-sub {
+    margin: 0 auto;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+    .text-newsletter-sub {
+        padding: 0.6rem;
+    }
 }
