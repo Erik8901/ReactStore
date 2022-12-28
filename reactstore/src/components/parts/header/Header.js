@@ -21,7 +21,7 @@ function Header() {
     }
     return (
         <div className="header-main-container">
-            <Link className='header-h1' to="/">React Store Header</Link>
+            <Link className='header-h1' to="/Home">React Store Header</Link>
             {openMainMenu === false ? <FontAwesomeIcon icon={faBars} size="lg" className="hamburger-icon" onClick={openMenu} />
                 : <FontAwesomeIcon icon={faClose} size="xl" className="hamburger-icon" onClick={openMenu} />}
             <div className="login-and-cart-container">

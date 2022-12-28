@@ -5,6 +5,10 @@ const openMainMenuState = atom({
     default: false
 })
 
+const openCategoryMenuState = atom({
+    key: "CategoryMenu",
+    default: false
+})
 
 const carouselCurrentIndex = atom({
     key: "carouselCurrentIndex",
@@ -35,6 +39,7 @@ const selectedCategoryList = atom({
 export {
     openMainMenuState,
     carouselCurrentIndex,
+    openCategoryMenuState,
     categoriesDefaultState,
     selectedCategoryState,
     savedSelectedCategoryState,

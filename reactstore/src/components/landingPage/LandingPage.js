@@ -3,7 +3,6 @@ import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { openMainMenuState } from "../../recoil_state";
 import { useRecoilState } from 'recoil';
-
 import './landingPage.css';
 
 import mainImg from '../../assets/images/landingPageImg1.jpg'

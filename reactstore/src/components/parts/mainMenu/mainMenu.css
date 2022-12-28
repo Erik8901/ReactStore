@@ -10,15 +10,11 @@
     cursor: pointer;
 }
 
-.title-categories {
-    margin-top: 2rem;
-}
-
-.categories-list-container {
+.main-menu-list {
     display: flex;
     flex-direction: column;
     text-align: left;
-    padding: 0 0 0 3rem;
+    padding: 4rem 0 0 3rem;
 }
 
 a {
@@ -26,7 +22,7 @@ a {
     text-decoration: none;
 }
 
-.category-li {
+.main-menu-li {
     list-style: none;
     padding: 0.6rem;
     cursor: pointer;
@@ -34,7 +30,7 @@ a {
     height: fit-content;
 }
 
-.category-li:hover {
+.main-menu-li:hover {
     /* border-bottom: 1px solid #696969; */
     color: #696969;
 }

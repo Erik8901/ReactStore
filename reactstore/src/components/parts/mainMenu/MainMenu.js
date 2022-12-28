@@ -1,46 +1,45 @@
 import React, { useEffect, useState } from 'react';
-import { openMainMenuState, categoriesDefaultState, selectedCategoryState, savedSelectedCategoryState } from "../../../recoil_state";
+import { categoriesDefaultState, selectedCategoryState, savedSelectedCategoryState, openCategoryMenuState } from "../../../recoil_state";
 import { useRecoilState } from 'recoil';
-import {
-    Link
-} from "react-router-dom";
-
+import { useNavigate } from 'react-router-dom';
+import CategoryMenu from '../categoriesMenu/CategoryMenu';
 
 //styles
 import './mainMenu.css';
 
 function MainMenu() {
-    const [openMainMenu, setOpenMainMenu] = useRecoilState(openMainMenuState);
+    const navigate = useNavigate();
+    const [menuList] = useState(["Home", "About", "Categories", "Style", "Career", "Contact"])
     const [categories] = useRecoilState(categoriesDefaultState)
     const [cats, setCats] = useState([])
     const [selectedCategory, setSelectedCategory] = useRecoilState(selectedCategoryState)
     const [savedCategory, setSavedCategory] = useRecoilState(savedSelectedCategoryState)
+    const [openMenu, setOpenMenu] = useRecoilState(openCategoryMenuState);
 
     useEffect(() => {
         if (categories) { setCats(categories.map(cat => cat.charAt(0).toUpperCase() + cat.slice(1))) }
     }, [])
 
-    const closeMainMenu = () => {
-        setOpenMainMenu(!openMainMenu)
-    }
+    const openSelectedMenu = (menuItem) => {
+        if (menuItem === "Categories") {
+            setOpenMenu(!openMenu)
+        }
 
-    const selectCategory = (cat) => {
-        setSelectedCategory(cat)
-        setSavedCategory(cat)
+        if (menuItem !== "Categories") {
+            navigate(menuItem)
+        }
     }
     //replace(/\s+/g, '-')
     return (
         <div className="main-menu-container">
-            <h3 className="title-categories">Categories</h3>
-            <div className='categories-list-container'>
-                {cats.map((category, index) => {
-                    return <Link to={'/category/' + category.replace(' ', '-')} key={index}>
-                        <li className="category-li" key={index} categoryid={index} onClick={() => selectCategory(category)}>
-                            {category}
-                        </li>
-                    </Link>
+            <div className='main-menu-list'>
+                {menuList.map((menuItem, index) => {
+                    return (<li className="main-menu-li" key={index} id={index} onClick={() => openSelectedMenu(menuItem)} >
+                        {menuItem}
+                    </li>)
                 })}
             </div>
+            {openMenu ? <CategoryMenu /> : null}
         </div >
     );
 }
