@@ -35,6 +35,15 @@ const selectedCategoryList = atom({
     default: []
 })
 
+const searchTerm = atom({
+    key: "searchTerm",
+    default: null
+})
+
+const allProductsList = atom({
+    key: "allProductsList",
+    default: []
+})
 
 export {
     openMainMenuState,
@@ -43,5 +52,7 @@ export {
     categoriesDefaultState,
     selectedCategoryState,
     savedSelectedCategoryState,
-    selectedCategoryList
+    selectedCategoryList,
+    searchTerm,
+    allProductsList
 };

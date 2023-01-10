@@ -21,6 +21,7 @@ function MainMenu() {
     }, [])
 
     const openSelectedMenu = (menuItem) => {
+        console.log(menuItem)
         if (menuItem === "Categories") {
             setOpenMenu(!openMenu)
         }

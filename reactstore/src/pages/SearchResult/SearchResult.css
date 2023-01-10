@@ -1,0 +1,7 @@
+.search-results-main-container {
+    width: auto;
+    position: relative;
+    margin-top: 10rem;
+    z-index: 10;
+    overflow: hidden;
+}
