@@ -40,6 +40,11 @@ const searchTerm = atom({
     default: null
 })
 
+const searchResultList = atom({
+    key: "searchResultList",
+    default: []
+})
+
 const allProductsList = atom({
     key: "allProductsList",
     default: []
@@ -53,6 +58,7 @@ export {
     selectedCategoryState,
     savedSelectedCategoryState,
     selectedCategoryList,
+    searchResultList,
     searchTerm,
     allProductsList
 };

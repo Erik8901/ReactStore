@@ -1,22 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { searchTerm, allProductsList } from "../../recoil_state";
+import { allProductsList } from "../../recoil_state";
 import { useLocation } from "react-router-dom";
-
 import './SearchResult.css';
 
 function Products() {
     const [productList] = useRecoilState(allProductsList);
-    const [search] = useRecoilState(searchTerm);
-    const location = useLocation(); // React Hook
     const [productSearchResultList, setProductSearchResultList] = useState([]);
+    const location = useLocation(); // React Hook
 
     useEffect(() => {
-        const results = productList.filter((product) => {
-            return product.title.toLowerCase().includes(search.toLowerCase())
-        })
-        setProductSearchResultList(results)
-    }, [search])
+        const currentUrl = location.pathname.replace('/Search-Results=', '')
+        if (productList) {
+            const resultsUpdate = productList.filter((product) => {
+                return product.title.toLowerCase().includes(currentUrl.toLowerCase())
+            })
+            setProductSearchResultList(resultsUpdate)
+        }
+    }, [location, productList])
 
     return (
         <div className="search-results-main-container">

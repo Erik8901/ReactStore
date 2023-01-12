@@ -16,25 +16,21 @@ function ApiCalls() {
 
     const location = useLocation(); // React Hook
 
-    //Get All Products
-    useEffect(() => {
-        axios.get(baseUrl + allProducts)
-            .then(response => setProducts(response.data))
-    }, [])
-
-    //Get All Categories
-    useEffect(() => {
-        axios.get(baseUrl + allCategories)
-            .then(response => setCategories(response.data))
-    }, [])
-
-    //Get Selected Category
     useEffect(() => {
         const currentUrl = location.pathname.replace('/category', '')
         const getUrl = currentUrl.replace('/', '')
         const fixUrl = getUrl.charAt(0).toLowerCase() + getUrl.slice(1)
         const newUrl = fixUrl.replace('-', ' ')
 
+        //Get All Products
+        axios.get(baseUrl + allProducts)
+            .then(response => setProducts(response.data))
+
+        //Get All Categories
+        axios.get(baseUrl + allCategories)
+            .then(response => setCategories(response.data))
+
+        //Get Selected Category
         axios.get(baseUrl + currentCategory + newUrl)
             .then(response => setCategoryList(response.data))
 

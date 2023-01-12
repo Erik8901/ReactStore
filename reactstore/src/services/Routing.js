@@ -1,6 +1,6 @@
-import React from 'react';
-import { useRecoilState } from 'recoil';
 
+import { useRecoilState } from 'recoil';
+import React, { useEffect, useState } from 'react';
 import LandingPage from '../components/landingPage/LandingPage';
 import About from '../pages/About/About'
 import Style from '../pages/Style/Style';
@@ -17,12 +17,20 @@ import {
 function Routing() {
     const [search] = useRecoilState(searchTerm);
 
+
+    useEffect(() => {
+
+
+
+    }, [search])
+
     return (
         <div className="Routes">
             <Routes>
                 <Route exact path='/' element={<LandingPage />} />
                 <Route exact path='/Home' element={<LandingPage />} />
                 <Route path={'/Search-Results=' + search} element={<SearchResult />} />
+                <Route path={'/Search-Results=:searchResultList'} element={<SearchResult />} />
                 <Route path='/About' element={<About />} />
                 <Route path='/Style' element={<Style />} />
                 <Route path='/Career' element={<Career />} />
