@@ -2,12 +2,14 @@ import { useEffect } from 'react';
 import axios from "axios";
 import { useRecoilState } from 'recoil';
 import { useLocation } from 'react-router-dom';
-import { categoriesDefaultState, selectedCategoryList, allProductsList } from "../recoil_state";
+import { categoriesDefaultState, selectedCategoryList, allProductsList, selectedProduct } from "../recoil_state";
 
 function ApiCalls() {
-    const [categories, setCategories] = useRecoilState(categoriesDefaultState)
-    const [categoryList, setCategoryList] = useRecoilState(selectedCategoryList)
-    const [productsList, setProducts] = useRecoilState(allProductsList)
+    const [categories, setCategories] = useRecoilState(categoriesDefaultState);
+    const [categoryList, setCategoryList] = useRecoilState(selectedCategoryList);
+    const [productsList, setProducts] = useRecoilState(allProductsList);
+    const [product, setProduct] = useRecoilState(selectedProduct);
+
 
     const baseUrl = 'https://fakestoreapi.com'
     const allProducts = '/products'
@@ -22,7 +24,6 @@ function ApiCalls() {
         const fixUrl = getUrl.charAt(0).toLowerCase() + getUrl.slice(1)
         const newUrl = fixUrl.replace('-', ' ')
 
-        //Get All Products
         axios.get(baseUrl + allProducts)
             .then(response => setProducts(response.data))
 
@@ -33,6 +34,14 @@ function ApiCalls() {
         //Get Selected Category
         axios.get(baseUrl + currentCategory + newUrl)
             .then(response => setCategoryList(response.data))
+
+        //Get Single Product
+        if (location.pathname.includes("Product")) {
+            let route = location.pathname.split('/')
+            let id = route[2]
+            axios.get(baseUrl + allProducts + "/" + id)
+                .then(response => setProduct(response.data))
+        }
 
         return
 

@@ -1,0 +1,7 @@
+.selected-product-main-container {
+    position: relative;
+    width: auto;
+    margin-top: 10rem;
+    z-index: 10;
+    overflow: hidden;
+}

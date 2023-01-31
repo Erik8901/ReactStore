@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { selectedCategoryList, selectedCategoryState, searchTerm, savedSelectedCategoryState } from "../recoil_state";
-import { useLocation } from "react-router-dom";
+import { selectedCategoryList, searchTerm } from "../recoil_state";
+import { useLocation, useNavigate } from "react-router-dom";
 import './products.css';
+
 function Products() {
     const [productList] = useRecoilState(selectedCategoryList);
     const [currentCategory, setCurrentCategory] = useState('');
     const [search] = useRecoilState(searchTerm);
+
+    const navigate = useNavigate();
     const location = useLocation(); // React Hook
 
     useEffect(() => {
@@ -14,6 +17,13 @@ function Products() {
         const currentTitle = title[2]
         setCurrentCategory(currentTitle)
     }, [location, search])
+
+    const toProductinfo = (item) => {
+        let title = item.title
+        title = title.replace(/\s+/g, '-');
+        let id = item.id
+        navigate('/Product/' + id + "/" + title)
+    }
 
     return (
         <div className="products-main-container">
@@ -23,7 +33,7 @@ function Products() {
                     <h1>{currentCategory}</h1>
                     <div className="products-ul">
                         {productList.map((item, index) => {
-                            return <div className="product-container" key={item.id}>
+                            return <div className="product-container" key={item.id} onClick={() => toProductinfo(item)}>
                                 <img src={item.image} className="product-img" alt="Image fail" />
                                 <span className="product-title">{item.title}</span>
                                 <span className="product-price" >Price: {item.price} €</span>

@@ -1,14 +1,15 @@
 
 import { useRecoilState } from 'recoil';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import LandingPage from '../components/landingPage/LandingPage';
 import About from '../pages/About/About'
 import Style from '../pages/Style/Style';
 import Career from '../pages/Career/Career'
 import Contact from '../pages/Contact/Contact'
 import Products from '../pages/Products';
-import SearchResult from '../pages/SearchResult/SearchResult'
-import { searchTerm } from "../recoil_state"
+import SearchResult from '../pages/SearchResult/SearchResult';
+import ProductInfoPage from '../pages/ProductInfoPage/ProductInfoPage';
+import { searchTerm, } from "../recoil_state"
 import {
     Routes,
     Route
@@ -16,11 +17,7 @@ import {
 
 function Routing() {
     const [search] = useRecoilState(searchTerm);
-
-
     useEffect(() => {
-
-
 
     }, [search])
 
@@ -36,6 +33,7 @@ function Routing() {
                 <Route path='/Career' element={<Career />} />
                 <Route path='/Contact' element={<Contact />} />
                 <Route path={'/Category/:categoryList'} element={<Products />} />
+                <Route path={'/Product/:id/:title'} element={<ProductInfoPage />} />
             </Routes>
         </div>
     );
