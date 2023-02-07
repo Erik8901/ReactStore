@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { selectedCategoryList, searchTerm } from "../recoil_state";
 import { useLocation, useNavigate } from "react-router-dom";
+
+import BreadCrumbs from '../components/parts/breadCrumbs/breadCrumbs';
 import './products.css';
 
 function Products() {
@@ -31,6 +33,7 @@ function Products() {
             {productList.length === 0 ? null :
                 <div className="products-container">
                     <h1>{currentCategory}</h1>
+                    <BreadCrumbs />
                     <div className="products-ul">
                         {productList.map((item, index) => {
                             return <div className="product-container" key={item.id} onClick={() => toProductinfo(item)}>

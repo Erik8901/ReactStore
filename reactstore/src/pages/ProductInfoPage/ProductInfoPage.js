@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { selectedProduct } from "../../recoil_state";
-
+import BreadCrumbs from '../../components/parts/breadCrumbs/breadCrumbs';
 
 import './ProductInfoPage.css';
 
@@ -20,6 +20,7 @@ function ProductsInfoPage() {
     return (
         <div className="selected-product-main-container">
             <h1>INFO PAGE</h1>
+            <BreadCrumbs />
             <h3>{productTitle}</h3>
             <img src={productImg} className="product-img" alt="Image fail" />
         </div>

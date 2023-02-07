@@ -1,0 +1,21 @@
+h1 {
+    color: #000;
+}
+
+.breadCrumbs-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: fit-content;
+    margin-left: 7rem;
+    padding: 0rem 0 4rem 0;
+    text-transform: capitalize;
+    color: #696969;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .breadCrumbs-container {
+        margin: 0 auto;
+    }
+}
