@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import './breadCrumbs.css';
 
-
 function BreadCrumbs() {
+    const navigate = useNavigate();
     const location = useLocation(); // React Hook
     const [breadCrumbsList, setBreadCrumbsList] = useState([]);
 
@@ -26,11 +26,20 @@ function BreadCrumbs() {
         setBreadCrumbsList(newBreadList)
     }, [location])
 
+    const goToBreadCrumb = (item) => {
+        let list = [];
+        list = location.pathname.split("/")
+        if (list[2] === item.replace("/", "") || list[3] === item.replace("/", "") || list[4] === item.replace("/", "")) {
+            window.location.reload(true)
+        } else {
+            navigate("/" + item.replace("/", ""))
+        }
+    }
 
     return (
         <div className='breadCrumbs-container'>
             {breadCrumbsList.map((item, index) => {
-                return <div key={index}>
+                return <div className='bread-crumb' key={index} onClick={() => goToBreadCrumb(item)}>
                     <span key={index}>{item}</span>
                 </div>
             })}

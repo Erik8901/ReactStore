@@ -17,9 +17,7 @@ import {
 
 function Routing() {
     const [search] = useRecoilState(searchTerm);
-    useEffect(() => {
-
-    }, [search])
+    useEffect(() => { }, [search])
 
     return (
         <div className="Routes">
@@ -32,8 +30,8 @@ function Routing() {
                 <Route path='/Style' element={<Style />} />
                 <Route path='/Career' element={<Career />} />
                 <Route path='/Contact' element={<Contact />} />
-                <Route path={'/Category/:categoryList'} element={<Products />} />
-                <Route path={'/Product/:id/:title'} element={<ProductInfoPage />} />
+                <Route path={'/:categoryList'} element={<Products />} />
+                <Route path={'/:categoryList/Product/:id/:title'} element={<ProductInfoPage />} />
             </Routes>
         </div>
     );

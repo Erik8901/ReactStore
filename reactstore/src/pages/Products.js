@@ -24,7 +24,7 @@ function Products() {
         let title = item.title
         title = title.replace(/\s+/g, '-');
         let id = item.id
-        navigate('/Product/' + id + "/" + title)
+        navigate(location.pathname + "/" + "Product" + "/" + id + "/" + title)
     }
 
     return (

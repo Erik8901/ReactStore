@@ -43,7 +43,6 @@ function CategoryMenu() {
                 }
             }, "10")
         }
-
     }, [openMenu, location])
 
     const selectCategory = (cat, index) => {
@@ -70,7 +69,7 @@ function CategoryMenu() {
             </div>
             <div className='categories-list-container'>
                 {cats.map((category, index) => {
-                    return <Link to={'/category/' + category.replace(' ', '-')} key={index}>
+                    return <Link to={category.replace(' ', '-')} key={index}>
                         <li className="category-li" key={index} categoryid={index} onClick={() => selectCategory(category, index)}>
                             {category}
                         </li>

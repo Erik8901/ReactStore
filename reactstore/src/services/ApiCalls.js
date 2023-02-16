@@ -38,7 +38,7 @@ function ApiCalls() {
         //Get Single Product
         if (location.pathname.includes("Product")) {
             let route = location.pathname.split('/')
-            let id = route[2]
+            let id = route[3]
             axios.get(baseUrl + allProducts + "/" + id)
                 .then(response => setProduct(response.data))
         }
