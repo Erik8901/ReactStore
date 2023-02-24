@@ -5,3 +5,10 @@
     z-index: 10;
     overflow: hidden;
 }
+
+.selected-product-info {
+    display: flex;
+    width: 42vw;
+    flex-direction: column;
+    margin: 0 auto;
+}
