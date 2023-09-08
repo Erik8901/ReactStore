@@ -1,0 +1,86 @@
+.btns-carousel {
+    position: absolute;
+    width: 100vw;
+    top: 49%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.btn-left {
+    border: solid #000;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 7px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    margin-left: 3rem;
+    cursor: pointer;
+}
+
+.btn-right {
+    border: solid #000;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 7px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin-right: 4rem;
+    cursor: pointer;
+}
+
+.btn-left:hover {
+    border: solid #fff;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 7px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    margin-left: 3rem;
+    cursor: pointer;
+}
+
+.btn-right:hover {
+    border: solid #fff;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 7px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin-right: 4rem;
+    cursor: pointer;
+}
+
+.main-img-desktop {
+    width: 100vw;
+    height: 100vh;
+}
+
+.fade {
+    animation: fadeIn 3s;
+}
+
+.fade1 {
+    animation: fadeIn 3s;
+}
+
+.fade1 {
+    animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main-img {
+        display: none;
+    }
+}

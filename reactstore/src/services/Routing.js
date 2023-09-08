@@ -1,7 +1,7 @@
 
 import { useRecoilState } from 'recoil';
 import React, { useEffect } from 'react';
-import LandingPage from '../components/landingPage/LandingPage';
+import LandingPage from '../pages/landingPage/LandingPage';
 import About from '../pages/About/About'
 import Style from '../pages/Style/Style';
 import Career from '../pages/Career/Career'
