@@ -7,19 +7,45 @@ import mainImg1 from '../../assets/images/landingPageImg2.webp'
 import mainImg2 from '../../assets/images/landingPageImg3.webp'
 import mainImg3 from '../../assets/images/landingPageImg4.webp'
 
+import mobileImg1 from '../../assets/images/mobile/landingPageImg1-mobile.webp'
+import mobileImg2 from '../../assets/images/mobile/landingPageImg2-mobile.webp'
+
 const fadeImages = [
+
+];
+
+const fadeImagesDesktop = [
     mainImg,
     mainImg1,
     mainImg2,
     mainImg3
 ];
 
+const fadeImagesMobile = [
+    mobileImg1,
+    mobileImg2
+];
+
 function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentImg, setCurrentImg,] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
 
     useEffect(() => {
         let img = document.getElementsByClassName("main-img-desktop")
+
+        const handleWindowResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleWindowResize);
+
+        if (windowWidth < 1000) {
+            fadeImages.splice(0, fadeImages.length, ...fadeImagesMobile);
+        } else {
+            fadeImages.splice(0, fadeImages.length, ...fadeImagesDesktop);
+        }
 
         if (currentIndex === 0) {
             img[0].classList.add("fade")
@@ -44,7 +70,7 @@ function Carousel() {
             setCurrentIndex(fadeImages.length - 1)
         }
 
-    }, [currentIndex])
+    }, [currentIndex, windowWidth])
 
     useEffect(() => {
 
@@ -57,14 +83,16 @@ function Carousel() {
     }, [currentIndex])
 
     return (
-        <div className="landing-page-main-container">
+        <div className="carousel-container">
             <div className="btns-carousel">
                 <div className="btn-left" onClick={() => setCurrentIndex(count => count - 1)}></div>
                 <div className="btn-right" onClick={() => setCurrentIndex(count => count + 1)}></div>
             </div>
             <img className="main-img-desktop" src={currentImg} alt="fail" />
             <div className="commercial-text">
-                <h1>AUTUMN/WINTER COLLECTION 2022 </h1>
+                <span>AUTUMN WINTER COLLECTION 2022</span>
+                <span className="sub-title">Stay warm and cosy</span>
+                <span className="browse-link">Browse Here</span>
             </div>
         </div>
     );
