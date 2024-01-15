@@ -32,7 +32,7 @@ const savedSelectedCategoryState = atom({
 
 const selectedCategoryList = atom({
     key: "categorySelectedList",
-    default: []
+    default: {}
 })
 
 const searchTerm = atom({

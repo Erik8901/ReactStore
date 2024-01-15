@@ -16,9 +16,14 @@ function Products() {
 
     useEffect(() => {
         const title = location.pathname.split("/")
-        const currentTitle = title[2]
-        setCurrentCategory(currentTitle)
-    }, [location, search])
+        //  const currentTitle = title[2]
+        setCurrentCategory(title[1])
+
+        if (productList) {
+            console.log(productList.Jackets)
+        }
+
+    }, [location, search, productList])
 
     const toProductinfo = (item) => {
         let title = item.title
@@ -30,9 +35,11 @@ function Products() {
     return (
         <div className="products-main-container">
             {/* {loadingProduts ? <h3>Loading Products...</h3> : null} */}
-            {productList.length === 0 ? null :
+            <h1>{currentCategory}</h1>
+
+            {/* {productList.length === 0 ? null :
                 <div className="products-container">
-                    <h1>{currentCategory}</h1>
+                    
                     <BreadCrumbs />
                     <div className="products-ul">
                         {productList.map((item, index) => {
@@ -44,7 +51,7 @@ function Products() {
                         })}
                     </div>
                 </div>
-            }
+            } */}
         </div>
     );
 }

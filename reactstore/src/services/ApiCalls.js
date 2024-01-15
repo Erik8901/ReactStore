@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRecoilState } from 'recoil';
 import { useLocation } from 'react-router-dom';
 import { categoriesDefaultState, selectedCategoryList, allProductsList, selectedProduct } from "../recoil_state";
+import { getFirestore } from 'firebase/firestore';
 
 function ApiCalls() {
     const [categories, setCategories] = useRecoilState(categoriesDefaultState);
@@ -28,12 +29,12 @@ function ApiCalls() {
             .then(response => setProducts(response.data))
 
         //Get All Categories
-        axios.get(baseUrl + allCategories)
-            .then(response => setCategories(response.data))
+        // axios.get(baseUrl + allCategories)
+        //     .then(response => setCategories(response.data))
 
         //Get Selected Category
-        axios.get(baseUrl + currentCategory + newUrl)
-            .then(response => setCategoryList(response.data))
+        // axios.get(baseUrl + currentCategory + newUrl)
+        //     .then(response => setCategoryList(response.data))
 
         //Get Single Product
         if (location.pathname.includes("Product")) {
@@ -41,6 +42,20 @@ function ApiCalls() {
             let id = route[3]
             axios.get(baseUrl + allProducts + "/" + id)
                 .then(response => setProduct(response.data))
+        }
+
+        //Get Firebase 
+        axios.get('https://reactstorebackend-default-rtdb.europe-west1.firebasedatabase.app/Products.json')
+            .then(response => setCategories(Object.keys(response.data.Clothes)))
+
+
+        if (newUrl) {
+            let newUrlUpperCase = newUrl.charAt(0).toUpperCase() + newUrl.slice(1);
+            if (newUrlUpperCase) {
+                axios.get('https://reactstorebackend-default-rtdb.europe-west1.firebasedatabase.app/Products/Clothes/' + newUrlUpperCase + '.json')
+                    .then(response => setCategoryList(response.data))
+            }
+
         }
 
         return

@@ -3,6 +3,7 @@
     "eslint-plugin-react-hooks": "^4.6.0"
   },
   "dependencies": {
+    "firebase": "^10.7.1",
     "react-axios": "^2.0.6"
   }
 }
