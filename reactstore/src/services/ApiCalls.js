@@ -25,8 +25,24 @@ function ApiCalls() {
         const fixUrl = getUrl.charAt(0).toLowerCase() + getUrl.slice(1)
         const newUrl = fixUrl.replace('-', ' ')
 
-        axios.get(baseUrl + allProducts)
-            .then(response => setProducts(response.data))
+        // Get Firebase 
+        axios.get('https://reactstorebackend-default-rtdb.europe-west1.firebasedatabase.app/Products.json')
+            .then(response => setCategories(Object.keys(response.data.Clothes)))
+
+        // if (newUrl) {
+        //     let newUrlUpperCase = newUrl.charAt(0).toUpperCase() + newUrl.slice(1);
+        //     if (newUrlUpperCase) {
+        //         axios.get('https://reactstorebackend-default-rtdb.europe-west1.firebasedatabase.app/Products/Clothes/' + newUrlUpperCase + '.json')
+        //             .then(response => setCategoryList(response.data))
+        //     }
+
+        // }
+
+
+        //Get FakeStoreApi Old
+
+        // axios.get(baseUrl + allProducts)
+        //     .then(response => setProducts(response.data))
 
         //Get All Categories
         // axios.get(baseUrl + allCategories)
@@ -37,26 +53,12 @@ function ApiCalls() {
         //     .then(response => setCategoryList(response.data))
 
         //Get Single Product
-        if (location.pathname.includes("Product")) {
-            let route = location.pathname.split('/')
-            let id = route[3]
-            axios.get(baseUrl + allProducts + "/" + id)
-                .then(response => setProduct(response.data))
-        }
-
-        //Get Firebase 
-        axios.get('https://reactstorebackend-default-rtdb.europe-west1.firebasedatabase.app/Products.json')
-            .then(response => setCategories(Object.keys(response.data.Clothes)))
-
-
-        if (newUrl) {
-            let newUrlUpperCase = newUrl.charAt(0).toUpperCase() + newUrl.slice(1);
-            if (newUrlUpperCase) {
-                axios.get('https://reactstorebackend-default-rtdb.europe-west1.firebasedatabase.app/Products/Clothes/' + newUrlUpperCase + '.json')
-                    .then(response => setCategoryList(response.data))
-            }
-
-        }
+        // if (location.pathname.includes("Product")) {
+        //     let route = location.pathname.split('/')
+        //     let id = route[3]
+        //     axios.get(baseUrl + allProducts + "/" + id)
+        //         .then(response => setProduct(response.data))
+        // }
 
         return
 

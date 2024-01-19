@@ -1,0 +1,33 @@
+.product-type-main-container {
+    margin-top: 10rem;
+}
+
+.types-of-clothing-container {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin: 4rem auto 3rem auto;
+    gap: 4rem;
+}
+
+.indoors-container,
+.outdoors-container {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.indoors-container:hover,
+.outdoors-container:hover {
+    transform: scale(1.1);
+
+}
+
+.type-clothing-img-title {
+    position: absolute;
+    color: #fff;
+    padding-left: 12rem;
+    font-size: 5rem;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+        0px 8px 13px rgba(0, 0, 0, 0.1),
+        0px 18px 23px rgba(0, 0, 0, 0.1);
+}

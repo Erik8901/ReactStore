@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
+import axios from "axios";
 import { selectedCategoryList, searchTerm } from "../recoil_state";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -16,14 +17,15 @@ function Products() {
 
     useEffect(() => {
         const title = location.pathname.split("/")
+
         //  const currentTitle = title[2]
         setCurrentCategory(title[1])
 
-        if (productList) {
-            console.log(productList.Jackets)
-        }
 
-    }, [location, search, productList])
+        return
+
+    }, [location, search])
+
 
     const toProductinfo = (item) => {
         let title = item.title
@@ -35,7 +37,7 @@ function Products() {
     return (
         <div className="products-main-container">
             {/* {loadingProduts ? <h3>Loading Products...</h3> : null} */}
-            <h1>{currentCategory}</h1>
+
 
             {/* {productList.length === 0 ? null :
                 <div className="products-container">
@@ -52,7 +54,7 @@ function Products() {
                     </div>
                 </div>
             } */}
-        </div>
+        </div >
     );
 }
 

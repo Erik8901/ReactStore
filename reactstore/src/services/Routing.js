@@ -6,7 +6,8 @@ import About from '../pages/About/About'
 import Style from '../pages/Style/Style';
 import Career from '../pages/Career/Career'
 import Contact from '../pages/Contact/Contact'
-import Products from '../pages/Products';
+//import Products from '../pages/Products';
+import ProductType from '../pages/ProductType/ProductType'
 import SearchResult from '../pages/SearchResult/SearchResult';
 import ProductInfoPage from '../pages/ProductInfoPage/ProductInfoPage';
 import { searchTerm, } from "../recoil_state"
@@ -30,7 +31,8 @@ function Routing() {
                 <Route path='/Style' element={<Style />} />
                 <Route path='/Career' element={<Career />} />
                 <Route path='/Contact' element={<Contact />} />
-                <Route path={'/:categoryList'} element={<Products />} />
+                {/* <Route path={'/:categoryList'} element={<Products />} /> */}
+                <Route path={'/:categoryList'} element={<ProductType />} />
                 <Route path={'/:categoryList/Product/:id/:title'} element={<ProductInfoPage />} />
             </Routes>
         </div>
