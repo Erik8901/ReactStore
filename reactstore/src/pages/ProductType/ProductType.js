@@ -35,7 +35,7 @@ function ProductType() {
             <h1 className="currentCategory">{currentCategory}</h1>
             {typeOfClothes !== null &&
                 <div className="types-of-clothing-container">
-                    <div className="indoors-container">
+                    <div className="indoors-container" >
                         <span className="type-clothing-img-title">{Object.keys(typeOfClothes)[0]}</span>
                         <img className="type-clothing-img" src={typeOfClothes.Indoors.img} />
                     </div>
