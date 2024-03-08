@@ -10,6 +10,7 @@ import Contact from '../pages/Contact/Contact'
 import ProductType from '../pages/ProductType/ProductType'
 import SearchResult from '../pages/SearchResult/SearchResult';
 import ProductInfoPage from '../pages/ProductInfoPage/ProductInfoPage';
+import ProductsTypeList from '../pages/ProductsTypeList/ProductsTypeList';
 import { searchTerm, } from "../recoil_state"
 import {
     Routes,
@@ -34,6 +35,7 @@ function Routing() {
                 {/* <Route path={'/:categoryList'} element={<Products />} /> */}
                 <Route path={'/:categoryList'} element={<ProductType />} />
                 <Route path={'/:categoryList/Product/:id/:title'} element={<ProductInfoPage />} />
+                <Route path={'/:categoryList/:ProductType'} element={<ProductsTypeList />} />
             </Routes>
         </div>
     );

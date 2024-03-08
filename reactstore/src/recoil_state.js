@@ -55,6 +55,11 @@ const selectedProduct = atom({
     default: {}
 })
 
+const selectedClothingType = atom({
+    key: "selectedClothingType",
+    default: null
+})
+
 export {
     openMainMenuState,
     carouselCurrentIndex,
@@ -66,5 +71,6 @@ export {
     searchResultList,
     searchTerm,
     allProductsList,
-    selectedProduct
+    selectedProduct,
+    selectedClothingType
 };
