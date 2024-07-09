@@ -11,11 +11,11 @@ function LandingPage() {
     useEffect(() => {
         let landingPageContainer = document.getElementsByClassName("landing-page-main-container");
 
-        if (openMainMenu === true) {
-            landingPageContainer[0].style.height = "100vh";
-        } else {
-            landingPageContainer[0].style.height = "auto";
-        }
+        // if (openMainMenu === true) {
+        //     landingPageContainer[0].style.height = "100vh";
+        // } else {
+        //     landingPageContainer[0].style.height = "auto";
+        // }
     }, [openMainMenu])
 
     return (

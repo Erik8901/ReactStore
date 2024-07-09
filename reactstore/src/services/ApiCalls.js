@@ -26,8 +26,8 @@ function ApiCalls() {
         const newUrl = fixUrl.replace('-', ' ')
 
         // Get Firebase 
-        axios.get('https://reactstorebackend-default-rtdb.europe-west1.firebasedatabase.app/Products.json')
-            .then(response => setCategories(Object.keys(response.data.Clothes)))
+        // axios.get('https://reactstorebackend-default-rtdb.europe-west1.firebasedatabase.app/Products.json')
+        //     .then(response => setCategories(Object.keys(response.data.Clothes)))
 
         // if (newUrl) {
         //     let newUrlUpperCase = newUrl.charAt(0).toUpperCase() + newUrl.slice(1);
@@ -41,24 +41,24 @@ function ApiCalls() {
 
         //Get FakeStoreApi Old
 
-        // axios.get(baseUrl + allProducts)
-        //     .then(response => setProducts(response.data))
+        axios.get(baseUrl + allProducts)
+            .then(response => setProducts(response.data))
 
-        //Get All Categories
-        // axios.get(baseUrl + allCategories)
-        //     .then(response => setCategories(response.data))
+        // Get All Categories
+        axios.get(baseUrl + allCategories)
+            .then(response => setCategories(response.data))
 
-        //Get Selected Category
-        // axios.get(baseUrl + currentCategory + newUrl)
-        //     .then(response => setCategoryList(response.data))
+        // Get Selected Category
+        axios.get(baseUrl + currentCategory + newUrl)
+            .then(response => setCategoryList(response.data))
 
-        //Get Single Product
-        // if (location.pathname.includes("Product")) {
-        //     let route = location.pathname.split('/')
-        //     let id = route[3]
-        //     axios.get(baseUrl + allProducts + "/" + id)
-        //         .then(response => setProduct(response.data))
-        // }
+        // Get Single Product
+        if (location.pathname.includes("Product")) {
+            let route = location.pathname.split('/')
+            let id = route[3]
+            axios.get(baseUrl + allProducts + "/" + id)
+                .then(response => setProduct(response.data))
+        }
 
         return
 
