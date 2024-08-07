@@ -39,9 +39,9 @@ function Products() {
             {/* {loadingProduts ? <h3>Loading Products...</h3> : null} */}
 
 
-            {/* {productList.length === 0 ? null :
+            {productList.length === 0 ? null :
                 <div className="products-container">
-                    
+
                     <BreadCrumbs />
                     <div className="products-ul">
                         {productList.map((item, index) => {
@@ -53,7 +53,7 @@ function Products() {
                         })}
                     </div>
                 </div>
-            } */}
+            }
         </div >
     );
 }

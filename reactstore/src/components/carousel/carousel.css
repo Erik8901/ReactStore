@@ -68,6 +68,11 @@
     animation: fadeIn 3s;
 }
 
+.browse-link:hover {
+    color: #696969;
+    cursor: pointer;
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;

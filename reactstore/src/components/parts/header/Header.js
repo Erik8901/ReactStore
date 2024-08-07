@@ -26,6 +26,7 @@ function Header() {
     const handleSearch = event => {
         setSearch(event.target.value);
         navigate('/Search-Results=' + event.target.value)
+
         // console.log('value is: ', search);
     };
 
