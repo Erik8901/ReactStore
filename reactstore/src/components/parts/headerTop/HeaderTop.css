@@ -3,7 +3,8 @@
     width: 100vw;
     box-sizing: border-box;
     border: none;
-    background-color: rgba(30, 30, 32, 0.93);
+    background: #28282B;
+    /* background-color: rgba(30, 30, 32, 0.93); */
     color: rgb(255, 255, 255);
     font-size: 14px;
     line-height: 17.5px;
