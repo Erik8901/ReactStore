@@ -4,3 +4,51 @@
     text-align: center;
     padding: 1rem;
 }
+
+.about-page-info-container {
+    padding-bottom: 20rem;
+    width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-page-info {
+    padding-top: 3rem;
+}
+
+h2 {
+    text-align: left;
+    margin-left: 5rem;
+}
+
+.info-container-1 {
+    display: flex;
+    flex-direction: row;
+    /* width: 700px;
+    margin: 0 auto; */
+}
+
+.info-container-2 {
+    display: flex;
+    flex-direction: row;
+    flex-direction: row-reverse;
+    /* width: 700px;
+    margin: 0 auto; */
+}
+
+.info-text {
+    text-align: start;
+    display: flex;
+    padding-right: 5rem;
+    margin-left: 5rem;
+    font-weight: 400;
+}
+
+.info-text-2 {
+    margin-left: 5rem;
+    text-align: start;
+    display: flex;
+    padding-right: 5rem;
+    font-weight: 400;
+}
