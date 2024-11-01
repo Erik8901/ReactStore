@@ -1,0 +1,30 @@
+.landing-page-main-container {
+    width: auto;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.commercial-text {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    color: #333;
+    font-size: 2rem;
+    font-weight: 601;
+    left: 0%;
+    bottom: 40%;
+    right: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FAFF00;
+    justify-content: center;
+    gap: 1rem;
+    height: 11rem;
+    width: 42rem;
+}
+
+.browse-link {
+    font-size: 1rem;
+}

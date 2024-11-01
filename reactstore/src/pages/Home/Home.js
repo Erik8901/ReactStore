@@ -3,21 +3,16 @@ import { openMainMenuState } from "../../recoil_state";
 import { useRecoilState } from 'recoil';
 import Carousel from '../../components/carousel/carousel'
 
-import './landingPage.css';
+import './Home.css';
 
 function LandingPage() {
     const [openMainMenu, setOpenMainMenu] = useRecoilState(openMainMenuState);
     useEffect(() => {
-        let landingPageContainer = document.getElementsByClassName("landing-page-main-container");
+        if (openMainMenu == true) {
+            setOpenMainMenu(!openMainMenu)
+        }
 
-
-        // if (openMainMenu === true) {
-        //     landingPageContainer[0].style.height = "100vh";
-        // } else {
-        //     landingPageContainer[0].style.height = "auto";
-        // }
-    }, [openMainMenu])
-
+    }, [])
     return (
         <div className="landing-page-main-container">
             <Carousel />

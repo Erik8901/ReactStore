@@ -3,6 +3,7 @@ import { useRecoilState } from 'recoil';
 import React, { useEffect } from 'react';
 import LandingPage from '../pages/landingPage/LandingPage';
 import About from '../pages/About/About'
+import Home from '../pages/Home/Home';
 import Style from '../pages/Style/Style';
 import Career from '../pages/Career/Career'
 import Contact from '../pages/Contact/Contact'
@@ -25,7 +26,7 @@ function Routing() {
         <div className="Routes">
             <Routes>
                 <Route exact path='/' element={<LandingPage />} />
-                <Route exact path='/Home' element={<LandingPage />} />
+                <Route exact path='/Home' element={<Home />} />
                 <Route path={'/Search-Results=' + search} element={<SearchResult />} />
                 <Route path={'/Search-Results=:searchResultList'} element={<SearchResult />} />
                 <Route path='/About' element={<About />} />

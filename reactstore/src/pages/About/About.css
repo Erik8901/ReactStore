@@ -7,7 +7,7 @@
 
 .about-page-info-container {
     padding-bottom: 20rem;
-    width: 1300px;
+    max-width: 1300px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -25,16 +25,12 @@ h2 {
 .info-container-1 {
     display: flex;
     flex-direction: row;
-    /* width: 700px;
-    margin: 0 auto; */
 }
 
 .info-container-2 {
     display: flex;
     flex-direction: row;
     flex-direction: row-reverse;
-    /* width: 700px;
-    margin: 0 auto; */
 }
 
 .info-text {
@@ -51,4 +47,27 @@ h2 {
     display: flex;
     padding-right: 5rem;
     font-weight: 400;
+}
+
+@media only screen and (max-width: 1300px) {
+
+    .info-container-1,
+    .info-container-2 {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    h2 {
+        margin: unset;
+    }
+
+    .info-text,
+    .info-text-2 {
+        margin: unset;
+        padding: unset;
+    }
+
+    .about-page-info-container {
+        padding-bottom: 10rem;
+    }
 }
